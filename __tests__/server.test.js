@@ -21,6 +21,6 @@ describe('Basic server functions work as expected.', () => {
     });
     test('Checks to see if bad route gets error.message.', async () => {
         const response = await mockRequest.get('/bad');
-        expect(response.message).toEqual(404);
+        expect(response._body.message).toContain('this is a bad route ');
     });
 });
